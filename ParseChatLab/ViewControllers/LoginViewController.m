@@ -70,7 +70,7 @@
     NSString *password = self.passwordField.text;
     
     if([username isEqual:@""] || [password isEqual:@""]){
-        UIAlertController *alert = [UIAlertController  alertControllerWithTitle:@"Title" message:@"One of the fields is empty" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController  alertControllerWithTitle:@"Missing field" message:@"One of the fields is empty" preferredStyle:UIAlertControllerStyleAlert];
         // create a cancel action
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             
@@ -83,6 +83,7 @@
         }];
         // add the OK action to the alert controller
         [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 
 }
